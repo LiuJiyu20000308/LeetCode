@@ -262,6 +262,22 @@ BFS的话使用queue,需要逐层操作的时候while内部要嵌套一个for循
 \item 撤销选择
 \end{itemize}
 
+\begin{verbatim}
+void backtracking(参数) {
+    if (终止条件) {
+        存放结果;
+        return;
+    }
+
+    for (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) {
+        处理节点;
+        backtracking(路径，选择列表); // 递归
+        回溯，撤销处理结果
+    }
+}
+
+\end{verbatim}
+
 有时候也要用到visited避免重复搜索，注意遇到重复的时候下一步该做什么，
 而不是直接return。 另外，回溯时只有遍历到最后或者条件达成的
 时候才将结果放入到vector中。
@@ -326,6 +342,33 @@ BFS的话使用queue,需要逐层操作的时候while内部要嵌套一个for循
 \item \textbf{377. 组合总和IV}
 \item \textbf{70. 爬楼梯 加入一次可以爬1-m个台阶呢？ 排列数问题}
 \item 322. 零钱兑换
+\item \textbf{139.单词拆分} 也可以用回溯算法
+\item 279. 完全平方数
+\end{itemize}
+
+
+\subsection{打家劫舍}
+
+\begin{itemize}
+\item 198. 打家劫舍
+\item 213.打家劫舍II 
+\item 337.打家劫舍III  \textbf{树状dp} dp返回两个数，一个是不偷该节点
+  的最大利润，一个是偷该节点的最大利润
+\end{itemize}
+
+\subsection{股票}
+
+每天有多种状态，每一天每种状态所获得的最大利润都要记录下来
+
+\begin{itemize}
+\item \textbf{121. 买卖股票最佳时机， }   只能购买一次
+\item \textbf{122. 买卖股票最佳时机II，} 可以无数次购买
+\item \textbf{123. 买卖股票最佳时机III，} 最多购买两次（4种状态）
+\item \textbf{188. 买卖股票最佳时机IV，} 最多购买k次（2k种状态）
+\item \textbf{309. 买卖股票最佳时机含冰冻期，} 可以无数次购买但有一天冰
+  冻期（4种状态：持有股票、未持有股票但已经过了冰冻期、刚卖、冰冻期）
+\item \textbf{714.买卖股票最佳时机含手续费，} 和122很像
+
 \end{itemize}
 \end{document}
 %%% Local Variables:
